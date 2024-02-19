@@ -2,14 +2,14 @@ package java_data_entry;
 
 import java.util.Scanner;
 
-public class Example1 {
+public class Example2 {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 
-		String x;
-		x = sc.next();
+		int x;
+		x = sc.nextInt();
 		System.out.println("You typed: " + x);
 	
 		sc.close();
