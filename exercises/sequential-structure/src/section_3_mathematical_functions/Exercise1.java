@@ -6,7 +6,7 @@ public class Exercise1 {
 		
 		double x = 3.0;
 		double y = 4.0;
-		double z = -5.4;
+		double z = -5.0;
 		double A, B, C;
 		
 		A = Math.sqrt(x);
