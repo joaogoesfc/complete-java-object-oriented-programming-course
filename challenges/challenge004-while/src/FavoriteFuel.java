@@ -32,6 +32,8 @@ public class FavoriteFuel {
 				System.out.println("Invalid value, try again!");
 				break;
 			}
+		
+			sc.close();
 		}
 		System.out.println("Thank you very much!");
 		System.out.println("Alcohol: " + alcohol + " times");
