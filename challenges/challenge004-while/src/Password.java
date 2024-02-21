@@ -6,10 +6,10 @@ public class Password {
 		Scanner sc = new Scanner(System.in);
 		
 		int password = 2002;
-		System.out.print("Enter your password:");
+		System.out.print("Enter your password: ");
 		int x = sc.nextInt();
 		while (x != password) {
-			System.out.println("Invalid password! try again");
+			System.out.println("Invalid password! try again.");
 			x = sc.nextInt();
 		}
 		
