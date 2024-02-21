@@ -11,7 +11,6 @@ public class Ex1 {
 		int sum = 0;
 		for (int i=0; i<n; i++) {
 			int x = sc.nextInt();
-			
 			sum += x;
 		}
 		

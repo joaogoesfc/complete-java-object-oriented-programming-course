@@ -1,12 +1,12 @@
 
-public class Ex2 {
+public class Countdown {
 
 	public static void main(String[] args) {
-		
-		for (int i=0; i<5; i++) {
+
+		for (int i=4; i>=0; i--) {
 			System.out.println("i value: " + i);
 		}
-		
+
 	}
 
 }
