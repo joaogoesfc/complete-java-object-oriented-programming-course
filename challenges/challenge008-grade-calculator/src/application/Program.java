@@ -20,7 +20,7 @@ public class Program {
 		
 		System.out.println("Final grade = " + s.finalGrade());
 		if (s.finalGrade() < 60) {
-			System.out.printf("Failed\nMissing %.2f points", 60 - s.finalGrade());
+			System.out.printf("Failed\nMissing %.2f points", s.missingPoints());
 		} else {System.out.println("Pass");}
 		
 		sc.close();

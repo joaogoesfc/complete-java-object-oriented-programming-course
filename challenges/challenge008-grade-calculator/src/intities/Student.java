@@ -11,5 +11,8 @@ public class Student {
 		return quarter1 + quarter2 + quarter3;
 	}
 	
+	public double missingPoints() {
+		if(finalGrade() < 60.0) return 60 - finalGrade(); else return 0.0;
+	}
 
 }
