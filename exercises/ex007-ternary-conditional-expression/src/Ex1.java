@@ -11,7 +11,8 @@ public class Ex1 {
 		
 		
 		System.out.println(discount);
-
+		
+		sc.close();
 	}
 
 }

@@ -38,7 +38,9 @@ public class Main {
 		}
 		
 		System.out.println("Day of the week: " + day);
-
+		
+		
+		sc.close();
 	}
 
 }
