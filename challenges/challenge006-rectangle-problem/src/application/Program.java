@@ -21,7 +21,7 @@ public class Program {
 		System.out.println("Perimeter = " + rectangle.perimeter());
 		System.out.println("Diagonal = " + rectangle.diagonal());
 		
-
+		sc.close();
 	}
 
 }
