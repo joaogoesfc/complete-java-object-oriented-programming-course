@@ -6,23 +6,30 @@ import java.util.Scanner;
 public class Program {
 
 	public static void main(String[] args) {
-
+		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("How many numbers do you want to enter (max 10): ");
+		System.out.print("How many numbers will you enter? ");
 		int n = sc.nextInt();
-		int[] vect = new int[n];
+		
+		double[] vect = new double[n];
 		
 		for (int i=0; i<vect.length; i++) {
 			System.out.print("Enter a number: ");
-			vect[i] = sc.nextInt();
+			vect[i] = sc.nextDouble();
+		}
+		double sum = 0;
+		System.out.print("Valores =");
+		for (int i=0; i<vect.length; i++) {
+			System.out.print(" " + vect[i]);
+			sum += vect[i];
 		}
 		
-		System.out.println("Negative numbers:");
-		for (int i=0; i<vect.length; i++) {
-			if (vect[i] < 0) System.out.println(vect[i]);
-		}
+		double avg = sum / vect.length;
+		
+		System.out.println("\n\nSum = " + sum);
+		System.out.println("Average = " + avg);
 		
 		sc.close();
 	}
