@@ -6,35 +6,28 @@ import java.util.Scanner;
 public class Program {
 
 	public static void main(String[] args) {
-
+		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-
+		
 		System.out.print("How many numbers will you enter? ");
 		int n = sc.nextInt();
 		double[] vect = new double[n];
 		
-		
+		double highest = 0;
+		int highestPosition = 0;
 		for (int i=0; i<n; i++) {
 			System.out.print("Enter a number: ");
-			vect[i] = sc.nextInt();
-		}
-		
-		int pair = 0;
-		double sum = 0;
-		System.out.print("Pair numbers =");
-		for (int i=0; i<n; i++) {
-			if (vect[i] % 2 == 0) {
-				pair ++;
-				sum += vect[i];
-				System.out.print(" " + vect[i]);
+			vect[i] = sc.nextDouble();
+			if (vect[i] > highest) {
+				highestPosition = i + 1;
+				highest = vect[i];
 			}
 		}
 		
-		System.out.println("\nAmount of pairs = " + pair);
-		System.out.println("Sum = " + sum);
-		System.out.println("Average = " + sum / pair);
-		
+		System.out.println("Highest value = " + highest);
+		System.out.println("Highest value position = " + highestPosition);
+
 		sc.close();
 	}
 
