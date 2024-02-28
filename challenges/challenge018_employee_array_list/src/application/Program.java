@@ -64,7 +64,7 @@ public class Program {
 			int id = sc.nextInt();
 			code = id;
 			emp = li.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-			if (emp != null) System.out.println("This id have been taken! try again.");
+			if (emp != null) System.out.println("This id have been taken! try another.");
 		} while (emp != null);
 		return code;
 	}
