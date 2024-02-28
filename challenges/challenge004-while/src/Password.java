@@ -15,7 +15,7 @@ public class Password {
 		
 		System.out.println("Access allowed");
 		
-
+		sc.close();
 	}
 
 }

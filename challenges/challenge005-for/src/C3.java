@@ -13,6 +13,7 @@ public class C3 {
 			System.out.println(i + " " + ( (int) Math.pow(i, 2)) + " " + ( (int) Math.pow(i, 3)));
 		}
 
+		sc.close();
 	}
 
 }

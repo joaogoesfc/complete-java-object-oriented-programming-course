@@ -16,6 +16,7 @@ public class C4 {
 		
 		}
 
+		sc.close();
 	}
 
 }
