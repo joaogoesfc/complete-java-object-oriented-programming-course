@@ -13,7 +13,7 @@ public class Ex1 {
 			x = sc.nextInt();
 			sum += x;
 		}
-		System.out.println(x + " is the sum of your numbers!");
+		System.out.println(sum + " is the sum of your numbers!");
 		
 		
 		sc.close();
