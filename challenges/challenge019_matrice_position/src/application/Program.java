@@ -20,7 +20,6 @@ public class Program {
 			}
 		}
 		
-		
 		int positionOf = sc.nextInt();
 		
 		for (int i=0; i<mat.length; i++) {
