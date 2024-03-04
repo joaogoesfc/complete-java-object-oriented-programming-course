@@ -2,7 +2,6 @@ package application;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,8 +17,8 @@ public interface Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-		DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		
 		
 		System.out.println("Enter cliente data:");
 		System.out.print("Name: ");
@@ -29,7 +28,7 @@ public interface Program {
 		String email = sc.next();
 		
 		System.out.print("Birthdate (DD/MM/YYYY):");
-		LocalDate birthDate = LocalDate.parse(sc.next(), fmt2);
+		LocalDate birthDate = LocalDate.parse(sc.next(), Client.fmt);
 		
 		Client c1 = new Client(name, email, birthDate);
 		
@@ -57,13 +56,7 @@ public interface Program {
 			order.addItem(new OrderItem(product, quantity));
 		}
 		System.out.println();
-		System.out.println("ORDER SUMMARY:");
-		System.out.println("Order moment: " + order.getMoment().format(fmt1));
-		System.out.println("Order status: " + order.getStatus());
-		System.out.println("Client: " + c1);
-		System.out.println("Order items:");
-		order.viewItems();
-		System.out.printf("Total price: $%.2f", order.totalPrice());
+		System.out.println(order);
 		
 		sc.close();
 	}

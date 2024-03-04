@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,9 @@ import entities.enums.OrderStatus;
 
 public class Order {
 
+	public static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+	
+	
 	private LocalDateTime moment;
 	private OrderStatus status;
 	
@@ -39,10 +43,6 @@ public class Order {
 	public LocalDateTime getMoment() {
 		return moment;
 	}
-
-	public List<OrderItem> getOrders() {
-		return orders;
-	}
 	
 	public void addItem(OrderItem orderItem) {
 		orders.add(orderItem);
@@ -52,22 +52,39 @@ public class Order {
 		orders.remove(orderItem);
 	}
 	
-	public void viewItems() {
-		for(OrderItem it : orders) {
-			System.out.println(
-					it.getProduct().getName() 
-					+ ", $" + String.format("%.2f", it.getPrice()) 
-					+ ", Quantity: " + it.getQuantity()
-					+ ", Subtotal: " + it.subTotal()
-					);
-		}
-	}
-	
 	public double totalPrice() {
-		double sum = 0;
+		double sum = 0.0;
 		for(OrderItem it : orders) {
 			sum += it.subTotal();
 		}
 		return sum;
 	}
+	
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("ORDER SUMMARY:\n");
+		sb.append("Order moment: " + moment.format(fmt) + "\n");
+		sb.append("Order status: " + status + "\n");
+		
+		sb.append(client + "\n");
+		
+		sb.append("Order items:");
+		for(OrderItem it : orders) sb.append("\n" + it);
+		sb.append("\nTotal price: " + String.format("%.2f", totalPrice()));
+		
+		return sb.toString();
+	}
+	/*
+	for(OrderItem it : orders) {
+		System.out.println("Cliente: " + client.getName() + ", " + client.getEmail());
+		System.out.println(
+				it.getProduct().getName() 
+				+ ", $" + String.format("%.2f", it.getPrice()) 
+				+ ", Quantity: " + it.getQuantity()
+				+ ", Subtotal: " + it.subTotal()
+				);
+	}
+	*/
+	
 }

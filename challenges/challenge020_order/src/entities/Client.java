@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Client {
 
+	public static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
 	private String name;
 	private String email;
 	private LocalDate birthDate;
@@ -38,7 +40,7 @@ public class Client {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(name + " ");
-		sb.append("(" +birthDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+ ") - ");
+		sb.append("(" +birthDate.format(fmt)+ ") - ");
 		sb.append(email);
 		return sb.toString();
 	}
