@@ -17,18 +17,19 @@ public class Program {
 		System.out.print(" Enter the number of employees: ");
 		int n = sc.nextInt();
 		for (int i=1; i<=n; i ++) {
-			System.out.printf(" Employee#%d data: ", i);
+			System.out.printf("Employee#%d data: ", i);
 			System.out.print("Outsourced(y/n)? ");
 			char outsourced  = sc.next().charAt(0);
 			System.out.print("Name: ");
 			sc.nextLine();
 			String name = sc.nextLine();
-			System.out.println("Hours: ");
+			System.out.print("Hours: ");
 			int hour = sc.nextInt();
-			System.out.print("Valueper hour: ");
+			System.out.print("Value per hour: ");
 			double valuePerHour = sc.nextDouble();
+			
 			if(outsourced == 'y') {
-				System.out.print(" Additionalcharge: ");
+				System.out.print("Additionalcharge: ");
 				double additional = sc.nextDouble();
 				Employee employee = new OutsourcedEmployee(name, hour, valuePerHour, additional);
 				employees.add(employee);
@@ -36,8 +37,11 @@ public class Program {
 				Employee employee = new Employee(name, hour, valuePerHour);
 				employees.add(employee);
 			}
-			
-		sc.close();	
 		}
+		System.out.println();
+		for(Employee list : employees) {
+			System.out.println(list.getName() + " - $ " + list.calcPayment());
+		}	
+		sc.close();
 	}
 }
