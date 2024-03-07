@@ -18,8 +18,6 @@ public class LegalPerson extends Person{
 	}
 
 	public double tax() {
-		if (employeeAmount <= 10) {
-			return income * 0.16;
-		} else return income * 0.14;
+		return employeeAmount <= 10 ? income * 0.16 : income * 0.14;
 	}
 }

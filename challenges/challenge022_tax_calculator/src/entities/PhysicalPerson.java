@@ -21,7 +21,11 @@ public class PhysicalPerson extends Person{
 	public double tax() {
 		double discount = healthcare * 0.5;
 		if (income <= 20000.00) {
-			return income * 0.15 - discount;
-		} else return income * 0.25 - discount;
+			double tax = income * 0.15 - discount;
+			return (tax < 0) ? 0.0 : tax;
+		} else {
+			double tax = income * 0.25 - discount;
+			return (tax < 0) ? 0.0 : tax;
+		}
 	}
 }
