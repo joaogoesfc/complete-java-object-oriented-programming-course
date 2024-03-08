@@ -44,13 +44,21 @@ public class Account {
 		balance+= amount;
 	}
 	
-	public void withdraw(double amount)throws DomainException {
+	public void withdraw(double amount) throws DomainException {
+		validateWithdraw(amount);
+		balance-= amount;
+	}
+	
+	private void validateWithdraw(double amount)throws DomainException {
 		if(amount > withdrawLimit) {
 			throw new DomainException("The amount exceeds withdraw limit");
 		}
 		if(amount > balance) {
 			throw new DomainException("Not enough balance");
 		}
-		balance-= amount;
+		if(amount < 0) {
+			throw new DomainException("Good try, but you will have to enter a positive number");
+		}
 	}
+	
 }

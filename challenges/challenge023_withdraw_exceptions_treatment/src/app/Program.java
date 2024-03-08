@@ -29,7 +29,8 @@ public class Program {
 			
 			Account account = new Account(number, holder, inicialBalance, withdrawLimit);
 			
-			System.out.print("Enter amountfor withdraw: ");
+			System.out.println();
+			System.out.print("Enter amount for withdraw: ");
 			account.withdraw(sc.nextDouble());
 			
 			System.out.println("New balance: " + String.format("%.2f", account.getBalance()));
