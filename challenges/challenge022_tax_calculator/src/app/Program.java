@@ -23,13 +23,17 @@ public class Program {
 		for(int i=1; i<=n; i++) {
 			System.out.println();
 			System.out.printf("Tax payer#%d data:\n", i);
+			
 			System.out.print("Individual or company(i/c)? ");
 			char type = sc.next().charAt(0);
+			
 			System.out.print("Name: ");
 			sc.nextLine();
 			String name = sc.nextLine();
+			
 			System.out.print("Anual income: ");
 			double income = sc.nextDouble();
+			
 			if (type == 'i') {
 				System.out.print("Health expenditures: ");
 				double healthcare = sc.nextDouble();
@@ -47,13 +51,13 @@ public class Program {
 			System.out.println(li);
 		}
 		
-		double sum =0;
+		double sum = 0.0;
 		for(Person li: people) {
 			sum += li.tax();
 		}
-		
 		System.out.println();
 		System.out.println("TOTAL TAXES: $ " + String.format("%.2f", sum) );
+		
 		sc.close();
 	}
 }
