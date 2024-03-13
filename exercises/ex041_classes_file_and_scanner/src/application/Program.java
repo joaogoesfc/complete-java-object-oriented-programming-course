@@ -23,10 +23,7 @@ public class Program {
 		finally {
 			if(sc != null) {
 				sc.close();
-			}
-			
+			}	
 		}
-
 	}
-
 }
