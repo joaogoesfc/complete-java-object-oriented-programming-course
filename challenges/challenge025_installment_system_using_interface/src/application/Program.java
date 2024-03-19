@@ -26,13 +26,14 @@ public class Program {
 		
 		System.out.println("Enter with the number of installments; ");
 		int installments = sc.nextInt();
-		
-		ContractService.processContract(contract, installments, new PaypalService());
+		ContractService contractService = new ContractService(new PaypalService());
+		contractService.processContract(contract, installments);
 		
 		System.out.println();
 		System.out.println("Installments; ");
 		contract.printInstallments();
 		
+		sc.close();
 	}
 
 }

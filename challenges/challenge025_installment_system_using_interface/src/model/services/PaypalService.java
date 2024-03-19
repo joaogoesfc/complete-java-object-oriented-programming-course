@@ -9,8 +9,7 @@ public class PaypalService implements OnlinePaymentService{
 
 	@Override
 	public double interest(double amount, int months) {
-		double aux = 0.01 * months;
-		return amount * aux;
+		return amount * 0.01 * months;
 	}
 
 }

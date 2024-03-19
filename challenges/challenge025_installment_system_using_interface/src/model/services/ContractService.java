@@ -7,13 +7,21 @@ import model.entities.Installment;
 
 public class ContractService {
 
-	public static void processContract(Contract contract, int months, OnlinePaymentService service) {
-		LocalDate dueDate = contract.getDate();
+	private OnlinePaymentService service;
+	
+	
+	public ContractService(OnlinePaymentService service) {
+		this.service = service;
+	}
+
+
+	public void processContract(Contract contract, int months) {
+		
 		double baseInstallment = contract.getTotalValue() / months;
 		for(int i = 1; i<=months; i++) {
+			LocalDate dueDate = contract.getDate().plusMonths(1);
 			double interest = service.interest(baseInstallment, i);
 			double installment = baseInstallment  + interest + service.paymentFee(baseInstallment + interest);
-			dueDate = dueDate.plusMonths(1);
 			contract.addInstallment(new Installment(((LocalDate) dueDate), installment));
 		}
 	}
